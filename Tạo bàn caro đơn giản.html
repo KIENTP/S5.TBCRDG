@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang=“en”>
+<head>
+    <meta charset=“UTF-8">
+    <title>CARO</title>
+</head>
+<body>
+<table id="txtShow"></table>
+<input type="button" value="Change Value" onclick="changeValue()">
+<script>
+    var txtShow = document.getElementById("txtShow");
+    var table = '';
+    var arr = [];
+    var arr1 = [];
+    for (let i = 0; i < 5; i++) {
+        arr[i] = new Array('0', '0', '0', '0', '0');
+    }
+    for (let i = 0; i < 5; i++) {
+        table += "</br>";
+        for (let j = 0; j < 5; j++) {
+            table += arr[i][j] + "&nbsp;" + "&nbsp;";
+        }
+    }
+    txtShow.innerHTML = table;
+
+    function changeValue() {
+        var psnX = parseInt(prompt("X :"));
+        var psnY = parseInt(prompt("y :"));
+        table = '';
+        arr[psnX][psnY] = "x";
+        for (let i = 0; i < 5; i++) {
+            table += "</br>";
+            for (let j = 0; j < 5; j++) {
+                table += arr[i][j] + "&nbsp;" + "&nbsp;";
+            }
+        }
+        txtShow.innerHTML = table;
+
+    }
+</script>
+</body>
+</html>
